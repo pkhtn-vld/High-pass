@@ -1,0 +1,55 @@
+.address-phone {
+  @include flex-v-center;
+
+  margin: 0;
+  width: fit-content;
+  font-family: 'TT Firs Neue';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--accent-color);
+  transition: .3s;
+
+  svg {
+    display: block;
+    width: 16.5px;
+    height: 16.5px;
+    margin-right: 4px;
+    fill: var(--accent-color);
+    transition: .3s;
+  }
+
+  @include for-desktop {
+    &:hover svg {
+      fill: var(--brown-color);
+      transition: .3s;
+    }
+
+    &:hover {
+      color: var(--brown-color);
+      transition: .3s;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: var(--brown-color);
+    transition: .3s;
+  }
+
+  &:focus-visible svg {
+    fill: var(--brown-color);
+    transition: .3s;
+  }
+
+  &:active {
+    outline: none;
+    color: var(--red-color);
+    transition: .3s;
+  }
+
+  &:active svg {
+    fill: var(--red-color);
+    transition: .3s;
+  }
+}

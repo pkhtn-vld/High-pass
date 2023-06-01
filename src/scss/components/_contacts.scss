@@ -1,0 +1,381 @@
+.contacts {
+  padding: 34px 0 68px;
+
+  @include small-tablet {
+    padding: 17px 0 50px;
+  }
+
+  @include mobile {
+    padding-bottom: 49px;
+  }
+
+  &__container-main {
+
+    @include mobile {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+
+    @include tablet {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    @include high-tablet {
+      gap: 31px;
+      grid-template-rows: 460px 445px;
+    }
+
+    @include mobile {
+      gap: 23px;
+      grid-template-rows: 472px 429px;
+
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__title-main {
+    margin: 0 0 16px;
+    color: var(--black-color);
+
+    @include tablet {
+      margin: 0 0 15px;
+    }
+
+    @include mobile {
+      padding-left: 21px;
+    }
+  }
+
+  &__container-left {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    grid-column: 8 span;
+
+    @include tablet {
+      grid-column: span 5;
+    }
+
+    @include high-tablet {
+      grid-column: span 8;
+    }
+  }
+
+  &__map {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 6px;
+    bottom: 0;
+    width: 100%;
+
+    @include mobile {
+      top: 0;
+      height: 99.5%;
+    }
+  }
+
+  &__container-address {
+    @include flex-h-center;
+
+    padding: 73px 3.12vw 50px 3.12vw;
+    flex-direction: column;
+    position: absolute;
+    min-height: 460px;
+    top: 6px;
+    left: 0;
+    right: 51.765%;
+    background-color: var(--map-bg-color);
+    z-index: 2;
+    transition: .3s;
+
+    @include tablet {
+      bottom: 0px;
+      top: 66.4%;
+      right: 0;
+      min-height: 157px;
+      padding: 25px 30px 20px 30px;
+    }
+
+    @include high-tablet {
+      top: 67.4%;
+      padding: 21px 30px 24px 30px;
+    }
+
+    @include mobile {
+      padding: 21px 0 9px 19px;
+      justify-content: center;
+      bottom: 1px;
+      top: 66.5%;
+    }
+
+    svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    svg rect {
+      transition: .3s;
+    }
+  }
+
+  &__title-address {
+    margin: 0 0 4px;
+    color: var(--white-color);
+    line-height: 25px;
+
+    @include mobile {
+      margin-bottom: 10px;
+      font-size: min(5.63vw, 24px);
+      line-height: min(6.88vw, 22px);
+    }
+  }
+
+  &__address-text {
+    margin: 0 0 3px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--grey-text-color);
+
+    @include tablet {
+      max-width: 300px;
+    }
+
+    @include high-tablet {
+      max-width: 436px
+    }
+
+    @include mobile {
+      margin-bottom: 13px;
+      max-width: 89%;
+      font-size: 14px;
+      line-height: 18px;
+      font-size: min(4.36vw, 16px);
+      line-height: min(5.63vw, 28px);
+    }
+  }
+
+  &__address-phone {
+    padding-left: 2px;
+
+    @include tablet {
+      position: absolute;
+      left: 178px;
+      bottom: 25px;
+    }
+
+    @include high-tablet {
+      position: static;
+    }
+
+    @include mobile {
+      font-weight: 500;
+      font-size: min(4.36vw, 16px);
+      line-height: min(5.63vw, 21px);
+
+    }
+
+    & svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &__address-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    @include for-desktop {
+      &:hover svg rect {
+        fill: var(--accent-color);
+        transition: .3s;
+      }
+    }
+
+    &:focus-visible svg rect {
+      fill: var(--accent-color);
+      transition: .3s;
+    }
+
+    &:active svg rect {
+      fill: var(--red-color);
+      transition: .3s;
+    }
+  }
+
+  [class*="ground-pane"] {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+  }
+
+  &__container-right {
+    grid-column: 4 span;
+
+    @include tablet {
+      grid-column: 3 span;
+    }
+
+    @include high-tablet {
+      grid-column: 8 span;
+    }
+
+    @include mobile {
+      padding: 0 21px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 5px;
+    color: var(--black-color);
+
+    @include mobile {
+      margin-bottom: 7px;
+      font-size: min(5.63vw, 24px);
+      line-height: min(6.88vw, 22px);
+    }
+  }
+
+  &__text {
+    margin: 0 0 14px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--grey-color);
+
+    @include high-tablet {
+      max-width: 466px;
+    }
+
+    @include mobile {
+      margin-bottom: 15px;
+      font-size: min(4.36vw, 16px);
+      line-height: min(5.63vw, 22px);
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__container-input {
+    position: relative;
+  }
+
+  &__form-input {
+    position: relative;
+    margin: 0 0 20px;
+    padding-left: 23px;
+    min-width: 300px;
+    max-width: 410px;
+    width: 100%;
+    height: 50px;
+    background-color: var(--input-request-color);
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--black-color);
+
+    @include high-tablet {
+      min-width: 278px;
+      max-width: 466px;
+    }
+
+    @include mobile {
+      height: 40px;
+      font-size: min(4.36vw, 16px);
+      line-height: min(5.94vw, 19px);
+    }
+
+    &::placeholder {
+      color: var(--grey-color);
+    }
+
+    @include for-desktop {
+      &:hover {
+        color: var(--accent-color);
+        transition: .3s;
+      }
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--accent-color);
+      transition: .3s;
+    }
+
+  }
+
+  &__container-input-comments {
+    position: relative;
+    max-height: 150px;
+    margin: 0 0 20px;
+  }
+
+  &__form-comments {
+    padding: 15px 23px;
+    min-width: 300px;
+    width: 100%;
+    max-height: 150px;
+    background-color: var(--input-request-color);
+    border: none;
+    resize: none;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--black-color);
+
+    @include high-tablet {
+      min-width: 278px;
+      max-width: 466px;
+    }
+
+    @include mobile {
+      padding-top: 12px;
+      font-size: min(4.36vw, 16px);
+      line-height: min(5.94vw, 19px);
+    }
+
+    &::placeholder {
+      color: var(--grey-color);
+    }
+
+    @include for-desktop {
+      &:hover {
+        color: var(--accent-color);
+        transition: .3s;
+      }
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--accent-color);
+      transition: .3s;
+    }
+  }
+}
+
+.hide-address {
+  opacity: 0;
+  transition: .5s;
+  pointer-events: none;
+}

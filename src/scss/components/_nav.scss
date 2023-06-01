@@ -1,0 +1,147 @@
+.nav {
+  padding-left: 40.5px;
+  transition: .3s;
+  opacity: 1;
+
+  &.hide {
+    display: none;
+  }
+
+  &.hidden {
+    opacity: 0;
+    max-height: 21px;
+  }
+
+  @include tablet {
+    padding-left: 13.5px;
+  }
+
+  @include high-tablet {
+    order: 1;
+    width: 100%;
+    padding: 0 22px 2px 22px;
+
+    @include flex;
+
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    min-height: 45px;
+    background-color: var(--light-black-color);
+  }
+
+
+  @include mobile {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 500;
+    overflow-y: auto;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black-color);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  }
+
+  &__list {
+    @include flex-all-sb;
+
+    @include high-tablet {
+      padding-top: 1px;
+      width: 100%;
+    }
+
+    @include mobile {
+      @include flex;
+
+      justify-content: start;
+      align-items: start;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding: 48px 0 92px;
+    }
+  }
+
+  &__item {
+    @include mobile {
+      & a {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+
+    &:nth-last-child(n+3) {
+      margin-right: 3.61vw;
+
+      @include tablet {
+        margin-right: 2.28vw;
+      }
+
+      @include high-tablet {
+        margin: 0;
+      }
+
+      @include mobile {
+        margin: 0 0 30px 0;
+      }
+    }
+
+    &:last-child {
+      display: none;
+
+      @include mobile {
+        display: flex;
+        margin-top: auto;
+        margin-right: 2.5px;
+
+        & a {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+
+    }
+  }
+
+  &__link {
+    padding: 0 5px;
+    font-family: 'TT Firs Neue';
+    font-weight: 400;
+    font-size: min(2.5vw, 16px);
+    line-height: min(2.8vw, 21px);
+    display: flex;
+    color: var(--white-color);
+    transition: .3s;
+
+    @include small-tablet {
+      padding: 0;
+    }
+
+    &:focus-visible {
+      outline: none;
+      background-color: var(--brown-color);
+      transition: .3s;
+    }
+
+    &:active {
+      color: var(--red-color);
+    }
+
+    &:hover {
+      @include for-desktop {
+        color: var(--accent-color);
+        transition: .3s;
+      }
+    }
+  }
+}
+
+.menu--active {
+  opacity: 1;
+  visibility: visible;
+}

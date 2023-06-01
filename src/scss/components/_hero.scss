@@ -1,0 +1,278 @@
+.hero {
+  padding: 41px 0 68px;
+
+  @include tablet {
+    padding: 34px 0 68px;
+  }
+
+  @include high-tablet {
+    padding: 79px 0 68px;
+  }
+
+  @include small-tablet {
+    padding: 75px 0 50px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+    @include high-tablet {
+      gap: 3.9vw;
+    }
+
+    @include small-tablet {
+      gap: 3vw;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr .8fr;
+      gap: 34px;
+    }
+  }
+
+  &__container-left {
+    position: relative;
+
+    @include high-tablet {
+      padding-top: 2px;
+    }
+
+    @include mobile {
+      padding-top: 0;
+
+    }
+
+    &::before {
+      content: '#мастеркласс';
+      position: absolute;
+      display: flex;
+      padding: 7px 15px;
+      top: 15px;
+      right: 15px;
+      background-color: var(--black-color);
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: var(--white-color);
+
+      @include tablet {
+        & .image {
+          object-fit: contain;
+          object-position: left center;
+        }
+      }
+
+      @include high-tablet {
+        top: 17px;
+      }
+
+      @include mobile {
+        top: min(1.88vw, 15px);
+        right: min(1.56vw, 15px);
+        padding: 1.25vw 2.3vw;
+        line-height: min(4.38vw, 16px);
+        font-size: min(3.75vw, 14px);
+      }
+    }
+  }
+
+  &__container-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    bottom: 3.1vw;
+    left: 3vw;
+    right: 2.7vw;
+
+    @include tablet {
+      bottom: 2.9vw;
+      left: 2.9vw;
+    }
+
+    @include high-tablet {
+      left: 3.6vw;
+      bottom: 3.9vw;
+    }
+
+    @include mobile {
+      left: 8.7vw;
+      bottom: 9.5vw;
+    }
+  }
+
+  &__text {
+    margin: 0 0 2px;
+    padding-left: 1px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--white-color);
+
+    @include tablet {
+      margin: 0 0 9px;
+      padding-left: 0;
+    }
+
+    @include high-tablet {
+      margin-bottom: 15px;
+      padding-left: 1px;
+      font-size: min(2.5vw, 16px);
+      line-height: min(2.49vw, 19px);
+    }
+
+    @include mobile {
+      margin-bottom: 8.5px;
+      line-height: min(5vw, 19px);
+      font-size: min(4.38vw, 16px);
+    }
+  }
+
+  &__title-main {
+    margin: 0 0 19px;
+    max-width: 430px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 11;
+    font-family: 'TT Firs Neue';
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 104%;
+    color: var(--white-color);
+
+    @include tablet {
+      margin: 0 0 22px;
+      font-size: 34px;
+      line-height: 100%;
+    }
+
+    @include high-tablet {
+      margin-bottom: 22px;
+      line-height: 90%;
+      font-size: min(4.43vw, 34px);
+      line-height: min(4.04vw, 31px);
+    }
+
+    @include mobile {
+      max-width: 60vw;
+      margin-bottom: 14px;
+      line-height: min(8.13vw, 37px);
+      font-size: min(7.5vw, 36px);
+    }
+  }
+
+  &__link {
+    width: fit-content;
+    margin-left: 2px;
+    padding: 12.5px 19.23px;
+    background-color: var(--accent-color);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    border: 3px solid var(--accent-color);
+    color: var(--white-color);
+    transition: .3s;
+
+    @include tablet {
+      margin-left: 0;
+    }
+
+    @include high-tablet {
+      margin-left: 2px;
+    }
+
+    @include mobile {
+      padding: min(2.81vw, 12.5px) min(6.2vw, 19.5px);
+      line-height: min(5vw, 19px);
+      font-size: min(4.36vw, 16px);
+    }
+
+    @include for-desktop {
+      &:hover {
+        background-color: var(--brown-color);
+        border-color: var(--brown-color);
+        transition: .3s;
+      }
+    }
+
+    &:focus-visible {
+      background-color: var(--accent-color);
+      border-color: var(--red-color);
+      transition: .3s;
+      outline: none;
+    }
+
+    &:active {
+      background-color: var(--red-color);
+      border-color: var(--red-color);
+      transition: .3s;
+    }
+  }
+
+  &__title {
+    margin: 0 0 18px;
+    font-family: 'TT Firs Neue';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 104%;
+    color: var(--black-color);
+
+    @include tablet {
+      margin: 0 0 25px;
+    }
+
+    @include high-tablet {
+      margin: 0 0 17px;
+      font-size: min(2.86vw, 22px);
+      line-height: min(2.99vw, 23px);
+    }
+
+    @include mobile {
+      margin-bottom: 16px;
+      font-size: min(5.625vw, 24px);
+      line-height: min(5.94vw, 25px);
+    }
+  }
+
+  &__content-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+    @include tablet {
+      grid-template-rows: 1.6fr .8fr;
+    }
+
+    @include high-tablet {
+      gap: 3.9vw;
+    }
+
+    @include small-tablet {
+      gap: 3vw;
+    }
+
+    @include mobile {
+      gap: 30px;
+    }
+  }
+
+  &__content-item:first-child {
+    grid-column: 2 span;
+  }
+
+  img {
+    display: block;
+  }
+}

@@ -1,0 +1,244 @@
+.request-title {
+  font-family: 'TT Firs Neue';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+}
+
+.just-validate-error-label {
+  position: absolute;
+  top: 3px;
+  left: 23px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 11px;
+  color: var(--error-color) !important;
+}
+
+.about {
+  padding: 30px 0 69px;
+  background-color: var(--black-color);
+
+  @include tablet {
+    padding: 30px 0 81px;
+  }
+
+  @include high-tablet {
+    padding: 30px 0 62px;
+  }
+
+  @include mobile {
+    padding: 32px 0 38px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include mobile {
+      gap: 21px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 2px;
+    color: var(--white-color);
+  }
+
+  &__text {
+    margin: 0;
+    padding-top: 3px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--grey-text-color);
+
+    @include high-tablet {
+      padding-top: 3px;
+      font-size: min(2.58vw, 16px);
+      line-height: min(4vw, 28px);
+    }
+
+    @include mobile {
+      padding-top: 4px;
+      font-size: min(4.38vw, 16px);
+      line-height: min(7.81vw, 28px);
+    }
+  }
+
+  &__container-right {
+    display: grid;
+    grid-template-rows: 1fr 88px;
+    gap: 25px;
+
+    @include tablet {
+      grid-template-rows: 1fr 158px;
+      gap: 24px;
+    }
+
+    @include high-tablet {
+      grid-template-rows: .9fr 158px;
+      gap: 24px;
+    }
+
+    @include mobile {
+      gap: 26px;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  &__container-img {
+    @include small-tablet {
+      margin: 0 auto;
+    }
+  }
+
+  &__subscribe-title {
+    margin: 0 0 16px;
+    color: var(--white-color);
+
+    @include tablet {
+      margin-left: -2px;
+    }
+
+    @include high-tablet {
+      margin: 0 0 16px 0;
+    }
+
+    @include mobile {
+      margin: 0 0 14px -2px;
+      font-size: min(5.63vw, 24px);
+      line-height: min(6.88vw, 22px);
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr .265fr;
+    gap: 30px;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__container-input {
+    position: relative;
+  }
+
+  &__form-input {
+    max-width: 474px;
+    width: 100%;
+    min-width: 278px;
+    height: 50px;
+    padding-left: 23px;
+    background-color: var(--light-black-color);
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--white-color);
+    transition: .3s;
+
+    @include tablet {
+      max-width: 342px;
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      height: 40px;
+      font-size: min(4.36vw, 16px);
+      line-height: min(5vw, 19px);
+    }
+
+    &::placeholder {
+      color: var(--grey-text-color);
+    }
+
+    @include for-desktop {
+      &:hover {
+        color: var(--accent-color);
+        transition: .3s;
+      }
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--accent-color);
+      transition: .3s;
+    }
+  }
+
+}
+
+.form-btn {
+  @include flex-all-center;
+
+  width: 126px;
+  height: 50px;
+  background-color: var(--accent-color);
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  border: 3px solid var(--accent-color);
+  color: var(--white-color);
+  transition: .3s;
+
+  @include mobile {
+    width: min(35.94vw, 126px);
+    height: min(12.50vw, 50px);
+    font-size: min(4.36vw, 16px);
+    line-height: min(5vw, 19px);
+  }
+
+  @include for-desktop {
+    &:hover {
+      background-color: var(--brown-color);
+      border-color: var(--brown-color);
+      transition: .3s;
+    }
+  }
+
+  &:focus-visible {
+    background-color: var(--accent-color);
+    border-color: var(--red-color);
+    transition: .3s;
+    outline: none;
+  }
+
+  &:active {
+    background-color: var(--red-color);
+    border-color: var(--red-color);
+    transition: .3s;
+  }
+}
+
+.minor-header {
+  font-family: 'TT Firs Neue';
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+
+  @include high-tablet {
+    font-size: min(3.13vw, 24px);
+    line-height: min(4.04vw, 31px);
+  }
+
+  @include mobile {
+    font-size: min(5.63vw, 24px);
+    line-height: min(7.19vw, 31px);
+  }
+}

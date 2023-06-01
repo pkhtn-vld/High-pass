@@ -1,0 +1,32 @@
+// colors
+:root {
+  // base
+  --font-family-roboto: "Roboto", sans-serif;
+  --font-family-TTFirsNeue: 'TTFirsNeue', sans-serif;
+
+  --content-width: 1290px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  --container-offset-tablet: 31px;
+  --content-width-tablet: 962px;
+  --container-width-tablet: calc(var(--content-width-tablet) + (var(--container-offset-tablet) * 2));
+
+  --container-offset-high-tablet: 27px;
+  --container-offset-small-tablet: 21px;
+
+  // colors
+  --white-color: #fff;
+  --black-color: #202020;
+  --accent-color: #FF6E30;
+  --brown-color: #BC572B;
+  --red-color: #CE4307;
+  --light-black-color: #4A4A4A;
+  --grey-color: #999;
+  --map-bg-color: rgba(32, 32, 32, 0.85);
+  --grey-text-color: #CACACA;
+  --input-request-color: #E9E9E9;
+  --close-icon-color: #808080;
+  --error-color: #F06666;
+
+}
